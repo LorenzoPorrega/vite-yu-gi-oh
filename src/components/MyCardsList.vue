@@ -21,7 +21,7 @@ export default {
       <div class="col-12 col-xl-3 col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center"
       v-for="singleCard in store.cards">
         <div class="card h-100" style="width: 18rem;">
-          <img :src="singleCard.card_images[0].image_url" class="card-img-top" :alt="singleCard.name">
+          <img :src="singleCard.card_images[0].image_url" class="card-img-top" :alt="singleCard.name" :title="singleCard.name">
           <div class="card-body d-flex flex-column align-items-center justify-content-start">
             <p class="card-text fw-bold text-center fs-4">{{singleCard.name}}</p>
             <p class="mt-auto text-center"
@@ -36,8 +36,12 @@ export default {
   </div>
 </template>
 
-<style>
-/* .card{
-  min-height: ;
-} */
+<style lang="scss" scoped>
+.card-img-top{
+  cursor: pointer;
+
+  &:hover{
+    transform: scale(110%);
+  }
+}
 </style>
